@@ -1,3 +1,4 @@
+
 # 🎃 Proyecto "Túnel del Terror → Ruleta TRUCO/TRATO" (JavaFX)
 
 ¡Bienvenido/a al README oficial de esta práctica evaluable del módulo M5! Aquí encontrarás todo lo necesario para comprender, ejecutar y presentar la mini-app creada con **JavaFX + Scene Builder**. Se han cuidado todos los apartados de la rúbrica, añadiendo comentarios, emojis y referencias visuales para que puedas defender el trabajo con seguridad ante tu profesor/a. 👻
@@ -319,6 +320,4 @@ mvn clean javafx:run
 - Añadir una lista de "trucos" y "tratos" temáticos y mostrarlos bajo el resultado.
 - Incluir efectos de sonido al girar la ruleta o al obtener un resultado específico.
 
----
 
-¡Listo! Con este README podrás justificar cada criterio, explicar el código en clase y lucir una presentación impecable en GitHub. 🦇 Si necesitas ajustes adicionales (traducciones, más capturas, etc.), modifícalo sin miedo. ¡Mucho éxito en tu entrega! 🕯️
