@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="402.0" prefWidth="550.0"
+      stylesheets="@halloween-style.css"
+      xmlns="http://javafx.com/javafx/25"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.interfazfx.HelloController">
+    <children>
+        <ImageView fitHeight="407.0" fitWidth="556.0" layoutX="-4.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@fondo.gif" />
+            </image>
+        </ImageView>
+        <BorderPane prefHeight="402.0" prefWidth="550.0">
+            <top>
+                <Pane prefHeight="83.0" prefWidth="550.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="titleLabel" layoutX="158.0" layoutY="6.0" prefHeight="71.0" prefWidth="234.0" styleClass="title-label" text="HALLOWEEN" textFill="RED">
+                            <font>
+                                <Font size="49.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </top>
+            <center>
+                <Pane prefHeight="314.0" prefWidth="550.0" styleClass="center-pane" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label layoutX="260.0" layoutY="11.0" styleClass="field-label" text="user:" />
+                        <TextField fx:id="userTextField" layoutX="186.0" layoutY="42.0" promptText="user..." styleClass="text-field" />
+                        <Label layoutX="249.0" layoutY="101.0" styleClass="field-label" text="password" />
+                        <TextField fx:id="passwordTextField" layoutX="188.0" layoutY="138.0" promptText="password..." styleClass="text-field" />
+                        <Label layoutX="260.0" layoutY="189.0" styleClass="field-label" text="curso:" />
+                        <ComboBox fx:id="cursoComboBox" layoutX="204.0" layoutY="212.0" prefHeight="28.0" prefWidth="148.0" promptText="dam" styleClass="combo-box">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="dam" />
+                                    <String fx:value="daw" />
+                                    <String fx:value="asir" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Pane layoutX="2.0" layoutY="263.0" prefHeight="52.0" prefWidth="550.0">
+                            <children>
+                                <Button fx:id="accederButton" layoutX="212.0" layoutY="2.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="129.0" styleClass="acceder-button" text="ACCEDER" />
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+            </center>
+        </BorderPane>
+    </children>
+</Pane>

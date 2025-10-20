@@ -1,0 +1,74 @@
+.root-pane {
+    -fx-background-color: radial-gradient(radius 120%, #0b0215 40%, #4d0000 75%, #000000 100%);
+    -fx-background-insets: 0;
+}
+
+.title-label {
+    -fx-text-fill: linear-gradient(#ff6000, #811d00);
+    -fx-font-family: "Cinzel Decorative";
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(253, 0, 0, 0.65), 25, 0.35, 0, 0);
+    -fx-text-alignment: center;
+}
+
+.wheel-container {
+    -fx-background-color: rgba(16, 0, 24, 0.55);
+    -fx-background-radius: 240;
+    -fx-border-color: rgba(133, 45, 0, 0.55);
+    -fx-border-radius: 240;
+    -fx-border-width: 3;
+    -fx-padding: 40;
+}
+
+.spin-button {
+    -fx-background-color: linear-gradient(#794600, #7e0000);
+    -fx-text-fill: #fff1f9;
+    -fx-font-family: "Spectral SC";
+    -fx-font-size: 18px;
+    -fx-padding: 12 34 12 34;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(115, 3, 0, 0.45), 20, 0.45, 0, 0);
+    -fx-border-color: rgba(0, 0, 0, 0.55);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 28;
+    -fx-letter-spacing: 0.2em;
+}
+
+.spin-button:hover {
+    -fx-background-color: linear-gradient(rgba(157, 79, 0, 0.8), #882600);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.6), 25, 0.55, 0, 0);
+    -fx-translate-y: -2px;
+}
+
+.spin-button:pressed {
+    -fx-background-color: linear-gradient(#3d0416, #f14000);
+    -fx-translate-y: 1px;
+}
+
+.result-label {
+    -fx-text-fill: #f4daf9;
+    -fx-font-family: "Spectral SC";
+    -fx-font-size: 18px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+}
+
+.result-label.celebration {
+    -fx-text-fill: linear-gradient(#ffe69c, #ff9d38);
+    -fx-effect: dropshadow(gaussian, rgba(255, 174, 56, 0.65), 25, 0.6, 0, 0);
+}
+
+.wheel-pointer {
+    -fx-fill: linear-gradient(#ffe1f0 0%, #5b0000 65%, #320012 100%);
+    -fx-stroke: rgba(18, 0, 27, 0.85);
+    -fx-stroke-width: 3;
+}
+
+.wheel-hub {
+    -fx-fill: linear-gradient(#f14200, #ff0000);
+    -fx-stroke: rgba(255, 213, 255, 0.6);
+    -fx-stroke-width: 3;
+    -fx-effect: dropshadow(gaussian, rgba(133, 47, 0, 0.65), 20, 0.4, 0, 0);
+}

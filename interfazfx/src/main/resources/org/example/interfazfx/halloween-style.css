@@ -1,0 +1,190 @@
+.root {
+    -fx-background-color: transparent;
+}
+
+/* Título Halloween */
+.title-label {
+    -fx-text-fill: #621111;
+    -fx-font-family: 'Impact', 'Arial Black', sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.9), 15, 0.8, 0, 0),
+    dropshadow(gaussian, rgba(0, 0, 0, 0.95), 8, 0.9, 3, 3),
+    innershadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 3);
+    -fx-letter-spacing: 3px;
+}
+
+/* Labels de campos */
+.field-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #000000, 5, 0.8, 2, 2);
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: rgba(20, 20, 20, 0.85);
+    -fx-background-radius: 8px;
+    -fx-border-color: #8b0000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-text-fill: #ff4444;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 12px;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.6), 10, 0.7, 0, 0),
+    innershadow(gaussian, rgba(0, 0, 0, 0.8), 8, 0.5, 0, 2);
+}
+
+.text-field:focused {
+    -fx-border-color: rgba(255, 0, 0, 0.53);
+    -fx-border-width: 3px;
+    -fx-background-color: rgba(30, 0, 0, 0.9);
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.8), 15, 0.8, 0, 0),
+    innershadow(gaussian, rgba(0, 0, 0, 0.9), 10, 0.6, 0, 2);
+    -fx-text-fill: #ff6666;
+}
+
+.text-field:hover {
+    -fx-border-color: rgba(204, 0, 0, 0.55);
+    -fx-effect: dropshadow(gaussian, rgba(204, 0, 0, 0.7), 12, 0.7, 0, 0);
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: rgba(20, 20, 20, 0.85);
+    -fx-background-radius: 8px;
+    -fx-border-color: #8b0000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.6), 10, 0.7, 0, 0);
+}
+
+.combo-box .list-cell {
+    -fx-background-color: rgba(20, 20, 20, 0.95);
+    -fx-text-fill: #ff4444;
+    -fx-font-size: 13px;
+}
+
+.combo-box:hover {
+    -fx-border-color: #cc0000;
+    -fx-effect: dropshadow(gaussian, rgba(204, 0, 0, 0.7), 12, 0.7, 0, 0);
+}
+
+.combo-box:focused {
+    -fx-border-color: rgba(255, 0, 0, 0.55);
+    -fx-border-width: 3px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(15, 15, 15, 0.95);
+    -fx-border-color: #8b0000;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(139, 0, 0, 0.8), 15, 0.8, 0, 5);
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: rgba(139, 0, 0, 0.5);
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: rgba(139, 0, 0, 0.7);
+    -fx-background-radius: 0 6px 6px 0;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #ff4444;
+}
+
+/* Botón Acceder */
+.acceder-button {
+    -fx-background-color: linear-gradient(to bottom, #8b0000 0%, #5a0000 100%);
+    -fx-background-radius: 10px;
+    -fx-border-color: rgba(255, 0, 0, 0.59);
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.7), 12, 0.8, 0, 0),
+    innershadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0.5, 0, 2);
+    -fx-padding: 8px 20px;
+}
+
+.acceder-button:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(204, 0, 0, 0.56) 0%, #8b0000 100%);
+    -fx-border-color: #ff3333;
+    -fx-border-width: 3px;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(255, 0, 0, 0.34), 18, 0.9, 0, 0),
+    innershadow(gaussian, rgba(255, 255, 255, 0.2), 5, 0.5, 0, 1);
+}
+
+.acceder-button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #5a0000 0%, #3a0000 100%);
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.8), 10, 0.7, 0, 3);
+}
+
+/* Panel central con efecto */
+.center-pane {
+    -fx-background-color: rgba(0, 0, 0, 0.3);
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.7), 20, 0.6, 0, 5);
+}
+/* Estilos para la ventana de error (Alert) */
+.dialog-pane {
+    -fx-background-color: #1a1a1a; /* Fondo negro oscuro para un look de Halloween */
+    -fx-border-color: #ff4500; /* Borde naranja */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #ff4500, 10, 0.5, 0, 0); /* Sombra naranja */
+}
+
+/* Estilo del encabezado (título y header text) */
+.dialog-pane .header-panel {
+    -fx-background-color: #ff4500; /* Fondo naranja para el encabezado */
+    -fx-padding: 10px;
+}
+
+/* Texto del título */
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-family: "Chiller"; /* Fuente estilo Halloween (asegúrate de que esté disponible) */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Texto del contenido (mensaje de error) */
+.dialog-pane .content.label {
+    -fx-text-fill: #ffcccc; /* Rosa pálido para el texto del mensaje */
+    -fx-font-family: "Arial"; /* Fuente legible */
+    -fx-font-size: 16px;
+    -fx-padding: 15px;
+}
+
+/* Estilo del botón en la ventana de error */
+.dialog-pane .button-bar .button {
+    -fx-background-color: #ff4500; /* Fondo naranja para el botón */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+/* Efecto al pasar el ratón por el botón */
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #ff6600; /* Naranja más claro al pasar el ratón */
+    -fx-effect: dropshadow(gaussian, #ffffff, 5, 0.3, 0, 0); /* Sombra blanca */
+}
+
+/* Estilo para el ícono de error (opcional, para ajustar el tamaño) */
+.dialog-pane .graphic-container .icon {
+    -fx-icon-color: rgba(255, 0, 0, 0.48); /* Rojo para el ícono de error */
+}

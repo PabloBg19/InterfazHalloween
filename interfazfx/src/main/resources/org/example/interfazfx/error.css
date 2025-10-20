@@ -1,0 +1,54 @@
+/* Estilos para la ventana de error (Alert) */
+.dialog-pane {
+    -fx-background-color: #1a1a1a; /* Fondo negro oscuro para un look de Halloween */
+    -fx-border-color: #ff4500; /* Borde naranja */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #ff4500, 10, 0.5, 0, 0); /* Sombra naranja */
+}
+
+/* Estilo del encabezado (título y header text) */
+.dialog-pane .header-panel {
+    -fx-background-color: #ff4500; /* Fondo naranja para el encabezado */
+    -fx-padding: 10px;
+}
+
+/* Texto del título */
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-family: "Chiller"; /* Fuente estilo Halloween (cambiar si no está disponible) */
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Texto del contenido (mensaje de error) */
+.dialog-pane .content.label {
+    -fx-text-fill: #ffcccc; /* Rosa pálido para el texto del mensaje */
+    -fx-font-family: "Arial"; /* Fuente legible */
+    -fx-font-size: 16px;
+    -fx-padding: 15px;
+}
+
+/* Estilo del botón en la ventana de error */
+.dialog-pane .button-bar .button {
+    -fx-background-color: #ff4500; /* Fondo naranja para el botón */
+    -fx-text-fill: #ffffff; /* Texto blanco */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 8px 15px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+/* Efecto al pasar el ratón por el botón */
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #ff6600; /* Naranja más claro al pasar el ratón */
+    -fx-effect: dropshadow(gaussian, #ffffff, 5, 0.3, 0, 0); /* Sombra blanca */
+}
+
+/* Estilo para el ícono de error */
+.dialog-pane .graphic-container .icon {
+    -fx-icon-color: #ff0000; /* Rojo para el ícono de error */
+}
