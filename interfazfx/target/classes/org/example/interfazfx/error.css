@@ -1,54 +1,147 @@
-/* Estilos para la ventana de error (Alert) */
+/* ===== ALERTA HALLOWEEN EXTREMA ===== */
+
+/* Ventana base */
 .dialog-pane {
-    -fx-background-color: #1a1a1a; /* Fondo negro oscuro para un look de Halloween */
-    -fx-border-color: #ff4500; /* Borde naranja */
-    -fx-border-width: 2px;
-    -fx-effect: dropshadow(gaussian, #ff4500, 10, 0.5, 0, 0); /* Sombra naranja */
+    /* Fondo en capas: negro profundo + “ruido” sutil + viñeteado rojizo */
+    -fx-background-color:
+            radial-gradient(center 50% 0%, radius 120%, rgba(255,30,0,0.12) 0%, rgba(26,26,26,0.0) 60%),
+            linear-gradient(from 0% 0% to 100% 100%, rgba(255,69,0,0.08) 0%, rgba(0,0,0,0.15) 100%),
+            #0f0f0f;
+    -fx-background-insets: 0, 0, 0;
+    -fx-border-color: linear-gradient(#ff6a00, #8b0000);
+    -fx-border-width: 2.5px;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,69,0,0.55), 14, 0.35, 0, 0),
+            innershadow(gaussian, rgba(255,0,0,0.35), 18, 0.7, 0, 0);
+    -fx-padding: 0;
 }
 
-/* Estilo del encabezado (título y header text) */
+/* Encabezado sangriento */
 .dialog-pane .header-panel {
-    -fx-background-color: #ff4500; /* Fondo naranja para el encabezado */
-    -fx-padding: 10px;
+    -fx-background-color:
+            linear-gradient(#ff3b00, #a11300);
+    -fx-background-insets: 0;
+    -fx-padding: 12px 14px 18px 14px;
+    -fx-border-color: rgba(0,0,0,0.35);
+    -fx-border-width: 0 0 1px 0;
+    -fx-effect:
+            innershadow(gaussian, rgba(0,0,0,0.6), 12, 0.7, 0, 3);
 }
 
-/* Texto del título */
+/* Goteo sutil bajo el header usando un degradado */
+.dialog-pane .header-panel:bottom {
+    -fx-background-color: linear-gradient(from 50% 0% to 50% 100%,
+    rgba(161,19,0,0.0) 0%,
+    rgba(161,19,0,0.35) 75%,
+    rgba(161,19,0,0.0) 100%);
+}
+
+/* Título */
 .dialog-pane .header-panel .label {
-    -fx-text-fill: #ffffff; /* Texto blanco */
-    -fx-font-family: "Chiller"; /* Fuente estilo Halloween (cambiar si no está disponible) */
-    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Chiller", "Cinzel", "Georgia", serif; /* fallback si no hay Chiller */
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
+    -fx-effect:
+            dropshadow(gaussian, rgba(0,0,0,0.9), 8, 0.65, 0, 1),
+            dropshadow(gaussian, rgba(255,80,0,0.65), 16, 0.2, 0, 0);
+    -fx-letter-spacing: 0.5px;
 }
 
-/* Texto del contenido (mensaje de error) */
+/* Contenido (mensaje) */
 .dialog-pane .content.label {
-    -fx-text-fill: #ffcccc; /* Rosa pálido para el texto del mensaje */
-    -fx-font-family: "Arial"; /* Fuente legible */
+    -fx-text-fill: #ffd7d7;      /* más pálido */
+    -fx-font-family: "Arial", "Segoe UI", sans-serif;
     -fx-font-size: 16px;
-    -fx-padding: 15px;
+    -fx-padding: 16px 18px 18px 18px;
+    -fx-effect: innershadow(gaussian, rgba(255,0,0,0.25), 10, 0.6, 0, 0);
 }
 
-/* Estilo del botón en la ventana de error */
+/* Zona de botones */
+.dialog-pane .button-bar {
+    -fx-padding: 12px 14px 16px 14px;
+    -fx-background-color:
+            linear-gradient(rgba(255,69,0,0.08), rgba(0,0,0,0.18));
+    -fx-border-color: rgba(0,0,0,0.35);
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Botones (normal) */
 .dialog-pane .button-bar .button {
-    -fx-background-color: #ff4500; /* Fondo naranja para el botón */
-    -fx-text-fill: #ffffff; /* Texto blanco */
-    -fx-font-family: "Arial";
+    -fx-background-color:
+            linear-gradient(#ff4500, #8b1a0a);
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "Arial", sans-serif;
     -fx-font-size: 14px;
-    -fx-padding: 8px 15px;
-    -fx-background-radius: 5px;
-    -fx-border-color: #ffffff;
+    -fx-padding: 9px 18px;
+    -fx-background-radius: 6px;
+    -fx-border-color: rgba(255,255,255,0.75);
     -fx-border-width: 1px;
-    -fx-border-radius: 5px;
+    -fx-border-radius: 6px;
     -fx-cursor: hand;
+    -fx-effect:
+            dropshadow(gaussian, rgba(0,0,0,0.9), 12, 0.5, 0, 1);
+    -fx-translate-y: 0;
 }
 
-/* Efecto al pasar el ratón por el botón */
+/* Botón hover: brillo y “foco rojo” */
 .dialog-pane .button-bar .button:hover {
-    -fx-background-color: #ff6600; /* Naranja más claro al pasar el ratón */
-    -fx-effect: dropshadow(gaussian, #ffffff, 5, 0.3, 0, 0); /* Sombra blanca */
+    -fx-background-color:
+            linear-gradient(#ff5c00, #b31b0a);
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,255,255,0.35), 6, 0.3, 0, 0),
+            dropshadow(gaussian, rgba(255,0,0,0.35), 18, 0.4, 0, 0);
 }
 
-/* Estilo para el ícono de error */
-.dialog-pane .graphic-container .icon {
-    -fx-icon-color: #ff0000; /* Rojo para el ícono de error */
+/* Botón pressed: pequeño “golpe” hacia abajo */
+.dialog-pane .button-bar .button:pressed {
+    -fx-translate-y: 1.5px;
+    -fx-effect:
+            innershadow(gaussian, rgba(0,0,0,0.75), 10, 0.7, 0, 1);
+}
+
+/* Botón default (Enter) un poco más oscuro e importante */
+.dialog-pane .button-bar .button:default {
+    -fx-background-color:
+            linear-gradient(#ff2e00, #6f0f07);
+    -fx-border-color: rgba(255,255,255,0.9);
+}
+
+/* Ícono/graphic (si tu Alert tiene gráfico) */
+.dialog-pane .graphic-container .icon,
+.dialog-pane .graphic-container .graphic {
+    -fx-opacity: 0.95;
+    -fx-effect:
+            dropshadow(gaussian, rgba(255,0,0,0.8), 12, 0.5, 0, 0),
+            dropshadow(gaussian, rgba(0,0,0,0.9), 10, 0.7, 0, 1);
+}
+
+/* Línea separadora bajo el header (sangre seca) */
+.dialog-pane .header-panel {
+    -fx-background-insets: 0;
+    -fx-border-color: linear-gradient(#3b0000, #000000);
+    -fx-border-width: 0 0 2px 0;
+}
+
+/* Borde interior rojizo en todo el panel para efecto “horno” */
+.dialog-pane:focused, .dialog-pane:showing {
+    -fx-effect:
+            innershadow(gaussian, rgba(255,0,0,0.25), 30, 0.8, 0, 0),
+            dropshadow(gaussian, rgba(255,69,0,0.45), 16, 0.4, 0, 0);
+}
+
+/* ------- Extras opcionales ------- */
+
+/* Texto secundario sutilmente más gris (si lo usas) */
+.dialog-pane .content .text {
+    -fx-fill: #f0cfcf;
+}
+
+/* Hacer que los hipervínculos (si hay) se vean peligrosos */
+.dialog-pane .content .hyperlink {
+    -fx-text-fill: #ff3b00;
+}
+.dialog-pane .content .hyperlink:hover {
+    -fx-text-fill: #ff6a00;
+    -fx-underline: true;
 }
