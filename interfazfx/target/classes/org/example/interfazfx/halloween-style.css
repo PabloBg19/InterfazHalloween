@@ -151,7 +151,7 @@
 /* Texto del título */
 .dialog-pane .header-panel .label {
     -fx-text-fill: #ffffff; /* Texto blanco */
-    -fx-font-family: "Chiller"; /* Fuente estilo Halloween (asegúrate de que esté disponible) */
+    -fx-font-family: "Chiller"; /* Fuente estilo Halloween  */
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
@@ -187,4 +187,9 @@
 /* Estilo para el ícono de error (opcional, para ajustar el tamaño) */
 .dialog-pane .graphic-container .icon {
     -fx-icon-color: rgba(255, 0, 0, 0.48); /* Rojo para el ícono de error */
+}
+.userInfoLabel{
+    -fx-text-fill: #ffcc00;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
 }

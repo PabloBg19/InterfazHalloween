@@ -9,10 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import java.awt.Font?>
 <AnchorPane prefHeight="600.0" prefWidth="640.0" styleClass="root-pane" stylesheets="@ruleta-style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.interfazfx.RuletaController">
     <children>
         <VBox alignment="CENTER" spacing="22.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="24.0">
             <children>
+                <Label fx:id="userInfoLabel" text="" layoutX="20" layoutY="20"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #fbf5ff;" />
                 <Label fx:id="titleLabel" styleClass="title-label" text="Ruleta de la Noche Eterna" wrapText="true" />
                 <Pane fx:id="wheelContainer" prefHeight="420.0" prefWidth="420.0" styleClass="wheel-container" />
                 <Button fx:id="spinButton" mnemonicParsing="false" styleClass="spin-button" text="Invocar el Destino" />
@@ -24,11 +27,8 @@
         </VBox>
       <Pane layoutX="-5.0" layoutY="538.0" prefHeight="148.0" prefWidth="648.0">
          <children>
-            <ImageView fitHeight="80.0" fitWidth="100.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../../../../../Desktop/calabaza.png" />
-               </image>
-            </ImageView>
+
+
             <ImageView fitHeight="80.0" fitWidth="100.0" layoutX="106.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>

@@ -44,18 +44,30 @@ public class RuletaController {
     private Button spinButton;
     @FXML
     private Label resultLabel;
+    @FXML
+    private Label userInfoLabel;
 
     private Canvas wheelCanvas;
     private Polygon pointer;
     private Circle hub;
     private double currentRotation;
     private final Random random = new Random();
+    private String nombre;
+    private String curso;
 
     @FXML
     public void initialize() {
         configureWheelContainer();
         drawWheel();
         spinButton.setOnAction(event -> spinWheel());
+    }
+
+    public void initializeData(String nombre, String curso) {
+        this.nombre = nombre;
+        this.curso = curso;
+        if (userInfoLabel != null) {
+            userInfoLabel.setText("Bienvenido " + nombre + " del curso: " + curso);
+        }
     }
 
     private void configureWheelContainer() {

@@ -69,6 +69,11 @@ public class HelloController {
             FXMLLoader loader = new FXMLLoader(fxml);
             Parent root = loader.load();
 
+            //traer datos del login
+            RuletaController controller = loader.getController();
+            String nombre = userTextField.getText().trim();
+            String curso = cursoComboBox.getValue();
+            controller.initializeData(nombre, curso);
             // Creamos la escena
             Scene scene = new Scene(root);
 
