@@ -188,8 +188,3 @@
 .dialog-pane .graphic-container .icon {
     -fx-icon-color: rgba(255, 0, 0, 0.48); /* Rojo para el ícono de error */
 }
-.userInfoLabel{
-    -fx-text-fill: #ffcc00;
-    -fx-font-size: 12px;
-    -fx-font-weight: bold;
-}

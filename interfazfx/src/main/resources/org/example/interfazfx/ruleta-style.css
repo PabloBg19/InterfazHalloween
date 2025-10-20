@@ -72,3 +72,11 @@
     -fx-stroke-width: 3;
     -fx-effect: dropshadow(gaussian, rgba(133, 47, 0, 0.65), 20, 0.4, 0, 0);
 }
+.user-Info-Label{
+    -fx-text-fill: #b4b10c;
+    -fx-font-family: "Spectral SC";
+    -fx-font-size: 35px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-fill: linear-gradient(#794600, #b4b10c);
+}

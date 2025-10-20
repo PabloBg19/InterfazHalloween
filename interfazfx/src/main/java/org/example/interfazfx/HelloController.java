@@ -34,7 +34,7 @@ public class HelloController {
                 errorMessage.append("Debes seleccionar un curso.\n");
             }
 
-            // ¡Ojo! StringBuilder -> usa length() para comprobar si hay errores
+
             if (errorMessage.length() > 0) {
                 mostrarError(errorMessage.toString());
                 return; // No seguimos si hay errores
@@ -63,7 +63,7 @@ public class HelloController {
     private void abrirRuleta() {
         try {
             // Cargamos el FXML de la ruleta
-            URL fxml = getClass().getResource("/org/example/interfazfx/ruleta-view.fxml");
+            URL fxml = getClass().getResource("ruleta-view.fxml");
             if (fxml == null) throw new IllegalStateException("No se encontró ruleta-view.fxml");
 
             FXMLLoader loader = new FXMLLoader(fxml);
@@ -82,7 +82,7 @@ public class HelloController {
             stage.setTitle("Ruleta de Halloween");
             stage.setScene(scene);
 
-            // ✅ Pantalla completa (sin barra ni bordes)
+            // Pantalla completa (sin barra ni bordes)
             stage.setFullScreen(true);
 
             // (Opcional) aplica el CSS si existe
