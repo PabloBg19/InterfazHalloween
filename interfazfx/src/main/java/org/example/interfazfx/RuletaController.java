@@ -374,7 +374,7 @@ public class RuletaController {
                 jumpscareView.setOpacity(0);
                 jumpscareView.setVisible(true);
 
-                double iw = 520;
+                double iw = 800;
                 jumpscareView.setFitWidth(iw);
                 jumpscareView.setLayoutX((wheelContainer.getWidth() - iw)/2);
                 jumpscareView.setLayoutY((wheelContainer.getHeight() - iw)/2);
@@ -389,7 +389,7 @@ public class RuletaController {
                 // aparición violenta del gif
                 ScaleTransition jZoom = new ScaleTransition(Duration.millis(160), jumpscareView);
                 jZoom.setFromX(0.85); jZoom.setFromY(0.85);
-                jZoom.setToX(1.18);   jZoom.setToY(1.18);
+                jZoom.setToX(1.35);   jZoom.setToY(1.35);
 
                 FadeTransition jFade = new FadeTransition(Duration.millis(120), jumpscareView);
                 jFade.setFromValue(0); jFade.setToValue(1);
@@ -472,86 +472,127 @@ public class RuletaController {
     }
 
     // ===== TRATO: fantasma + HIMNO (se escucha, sin scream) =====
+    // ===== TRATO: Jumpscare con scream2 y jumpscare2.gif =====
     private void runTratoFantasmaConHimno() {
-        // NO paramos el himno aquí; lo reproducimos y se seguirá oyendo hasta el próximo giro.
-        // Pero sí paramos el resto para evitar solapes.
 
-        fadeOutAndStop(screamPlayer, Duration.millis(100));
-        fadeOutAndStop(rumblePlayer, Duration.millis(100));
 
-        // Luz tenue para ambiente
         darkOverlay.setVisible(true);
+        vignette.setVisible(true);
+        strobe.setVisible(false);
+        ghostView.setVisible(false);
+        jumpscareView.setVisible(false);
+
+        // 1) fundido oscuro
         Timeline dim = new Timeline(
                 new KeyFrame(Duration.ZERO, new KeyValue(darkOverlay.fillProperty(), Color.color(0,0,0,0.0))),
-                new KeyFrame(Duration.millis(220), new KeyValue(darkOverlay.fillProperty(), Color.color(0,0,0,0.25)))
+                new KeyFrame(Duration.millis(250), new KeyValue(darkOverlay.fillProperty(), Color.color(0,0,0,0.55)))
         );
 
-        // Reproducir HIMNO (audible). No loop por defecto; si quieres loop, descomenta:
-        // if (hymnPlayer != null) hymnPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        if (hymnPlayer != null) {
-            try { hymnPlayer.setVolume(0.85); } catch (Exception ignored) {}
-            playSafe(hymnPlayer);
-        }
+        // 2) sonidos base (usar thunderPlayer que carga scream2.mp3)
+        playSafe(thunderPlayer);  // Este reproduce scream2.mp3
+        playSafe(rumblePlayer);
 
         try {
-            URL ghostUrl = getClass().getResource("jumpscare2.gif");
-            if (ghostUrl != null) {
-                Image ghost = new Image(ghostUrl.toExternalForm(), 380, 380, true, true);
-                ghostView.setImage(ghost);
-                ghostView.setOpacity(0);
-                ghostView.setVisible(true);
-                ghostView.setLayoutX((wheelContainer.getWidth() - 380) / 2);
-                ghostView.setLayoutY(-420);
+            URL gifUrl = getClass().getResource("jumpscare2.gif");
+            if (gifUrl != null) {
+                Image gif = new Image(gifUrl.toExternalForm());
+                jumpscareView.setImage(gif);
+                jumpscareView.setOpacity(0);
+                jumpscareView.setVisible(true);
 
-                TranslateTransition drop = new TranslateTransition(Duration.millis(500), ghostView);
-                drop.setFromY(0);
-                drop.setToY(520);
+                double iw = 800;
+                jumpscareView.setFitWidth(iw);
+                jumpscareView.setLayoutX((wheelContainer.getWidth() - iw)/2);
+                jumpscareView.setLayoutY((wheelContainer.getHeight() - iw)/2);
 
-                FadeTransition fadeIn = new FadeTransition(Duration.millis(320), ghostView);
-                fadeIn.setFromValue(0);
-                fadeIn.setToValue(1);
+                // zoom "cámara"
+                ScaleTransition camZoom = new ScaleTransition(Duration.millis(240), wheelContainer);
+                camZoom.setToX(1.06);
+                camZoom.setToY(1.06);
+                camZoom.setAutoReverse(true);
+                camZoom.setCycleCount(2);
 
-                ScaleTransition zoom = new ScaleTransition(Duration.millis(320), ghostView);
-                ghostView.setScaleX(1.0);
-                ghostView.setScaleY(1.0);
-                zoom.setToX(1.06);
-                zoom.setToY(1.06);
+                // aparición violenta del gif
+                ScaleTransition jZoom = new ScaleTransition(Duration.millis(160), jumpscareView);
+                jZoom.setFromX(0.85); jZoom.setFromY(0.85);
+                jZoom.setToX(1.35);   jZoom.setToY(1.35);
 
-                ParallelTransition ghostAppear = new ParallelTransition(drop, fadeIn, zoom);
+                FadeTransition jFade = new FadeTransition(Duration.millis(120), jumpscareView);
+                jFade.setFromValue(0); jFade.setToValue(1);
 
-                // Temblor leve simpático
-                TranslateTransition shake1 = makeShake(wheelContainer, 10, 3, 6);
-                TranslateTransition shake2 = makeShake(wheelContainer, 6, 3, 6);
+                ParallelTransition jumpscareAppear = new ParallelTransition(jZoom, jFade);
 
-                PauseTransition hold = new PauseTransition(Duration.millis(900));
+                // scream2 (ligero retardo) - ya se reproduce con thunderPlayer arriba
+                PauseTransition screamDelay = new PauseTransition(Duration.millis(60));
+
+                // flashes + glitch + temblores
+                TranslateTransition shake1 = makeShake(wheelContainer, 16, 6, 5);
+                TranslateTransition shake2 = makeShake(wheelContainer, 9, 4, 5);
+                Runnable flashes = () -> flashStrobe(5, 35, 55);
+                Runnable glitch = () -> microGlitch(Duration.millis(300));
+
+                // vibración del puntero
+                RotateTransition pointerTwitch = new RotateTransition(Duration.millis(200), pointer);
+                pointerTwitch.setFromAngle(-12);
+                pointerTwitch.setToAngle(12);
+                pointerTwitch.setAutoReverse(true);
+                pointerTwitch.setCycleCount(3);
+
+                // limpieza
+                PauseTransition hold = new PauseTransition(Duration.millis(600));
                 Timeline undim = new Timeline(
-                        new KeyFrame(Duration.millis(400), e -> {
+                        new KeyFrame(Duration.millis(240), ev -> {
                             darkOverlay.setVisible(false);
-                            ghostView.setVisible(false);
-                            ghostView.setTranslateY(0);
+                            vignette.setVisible(false);
+                            strobe.setVisible(false);
+                            jumpscareView.setVisible(false);
+                            jumpscareView.setOpacity(0);
+                            wheelContainer.setScaleX(1.0);
+                            wheelContainer.setScaleY(1.0);
+                            blurFx.setRadius(0);
+                            colorShift.setHue(0);
+                            colorShift.setSaturation(0);
+                            pointer.setRotate(0);
                         })
                 );
 
                 SequentialTransition seq = new SequentialTransition(
-                        dim, ghostAppear, shake1, shake2, hold, undim
+                        dim,
+                        new ParallelTransition(camZoom, jumpscareAppear, screamDelay),
+                        new PauseTransition(Duration.millis(50)),
+                        new Transition() {
+                            @Override
+                            protected void interpolate(double v) {
+
+                            }
+
+                            { setCycleDuration(Duration.millis(1)); setOnFinished(ev -> { flashes.run(); glitch.run(); }); }},
+                        pointerTwitch,
+                        shake1, shake2, hold, undim
                 );
-                seq.setOnFinished(e -> showResultMessage("¡TRATO con himno! 🎵👻"));
+                seq.setOnFinished(e -> fadeOutAndStop(rumblePlayer, Duration.millis(180)));
                 seq.play();
 
             } else {
-                // Sin imagen: dim + mensaje
+                // Fallback sin GIF
+                flashStrobe(3, 40, 70);
+                microGlitch(Duration.millis(260));
+                TranslateTransition shake = new TranslateTransition(Duration.millis(40 * 6), wheelContainer);
+                shake.setFromX(0); shake.setByX(14); shake.setAutoReverse(true); shake.setCycleCount(6);
                 SequentialTransition seq = new SequentialTransition(
-                        dim, new PauseTransition(Duration.millis(400))
+                        dim, shake, new PauseTransition(Duration.millis(280))
                 );
                 seq.setOnFinished(e -> {
                     darkOverlay.setVisible(false);
-                    showResultMessage("¡TRATO con himno! 🎵");
+                    vignette.setVisible(false);
+                    fadeOutAndStop(rumblePlayer, Duration.millis(180));
                 });
                 seq.play();
             }
         } catch (Exception ex) {
             darkOverlay.setVisible(false);
-            showResultMessage("¡TRATO con himno! 🎵");
+            vignette.setVisible(false);
+            fadeOutAndStop(rumblePlayer, Duration.millis(180));
         }
     }
 
