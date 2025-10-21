@@ -118,7 +118,7 @@ Controlador principal de la ruleta que maneja:
 
 ## 🚪 Pantalla 1: Entrada al Túnel
 
-![Ventana 1](docs/ventana1.png)
+![Ventana 1](ventana1.png)
 
 ### Componentes visuales
 
@@ -162,7 +162,7 @@ El método `initialize()` configura el evento del botón:
 
 ### Personalización visual del Alert
 
-![Ventana de error personalizada](docs/ventana-error.png)
+![Ventana de error personalizada](ventana-error.png)
 
 La ventana de error aplica el archivo `error.css` directamente sobre el `DialogPane` del `Alert`, logrando:
 
@@ -200,7 +200,7 @@ Tras validación exitosa, el método `abrirRuleta()`:
 
 ## 🎡 Pantalla 2: Ruleta TRUCO/TRATO
 
-![Ventana 2](docs/ventana2.png)
+![Ventana 2](ventana2.png)
 
 ### Arquitectura visual
 
@@ -321,7 +321,7 @@ El sistema utiliza una **capa de efectos superpuesta** (`effectLayer`) que perma
 
 ### Jumpscare TRUCO
 
-![Efecto jumpscare TRUCO](docs/jumpscare-truco.png)
+![Efecto jumpscare TRUCO](jumpscare-truco.png)
 
 **Recursos utilizados**:
 - `jumpscare.gif`: GIF aterrador principal
@@ -357,7 +357,7 @@ El sistema utiliza una **capa de efectos superpuesta** (`effectLayer`) que perma
 
 ### Jumpscare TRATO
 
-![Efecto jumpscare TRATO](docs/jumpscare-trato.png)
+![Efecto jumpscare TRATO](jumpscare-trato.png)
 
 **Recursos utilizados**:
 - `jumpscare2.gif`: GIF alternativo para variedad visual
