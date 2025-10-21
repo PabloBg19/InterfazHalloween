@@ -321,7 +321,7 @@ El sistema utiliza una **capa de efectos superpuesta** (`effectLayer`) que perma
 
 ### Jumpscare TRUCO
 
-![Efecto jumpscare TRUCO](jumpscare-truco.png)
+![Efecto jumpscare TRUCO](jumpscare.gif)
 
 **Recursos utilizados**:
 - `jumpscare.gif`: GIF aterrador principal
@@ -357,7 +357,7 @@ El sistema utiliza una **capa de efectos superpuesta** (`effectLayer`) que perma
 
 ### Jumpscare TRATO
 
-![Efecto jumpscare TRATO](jumpscare-trato.png)
+![Efecto jumpscare TRATO](jumpscare2.gif)
 
 **Recursos utilizados**:
 - `jumpscare2.gif`: GIF alternativo para variedad visual
