@@ -80,3 +80,17 @@
     -fx-text-alignment: center;
     -fx-fill: linear-gradient(#794600, #b4b10c);
 }
+.wheel-pointer {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.85), 20, 0.0, 0, 3);
+}
+
+.wheel-hub {
+    -fx-cursor: hand;
+}
+
+.label.celebration {
+    -fx-text-fill: #ffe28a;
+    -fx-font-size: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 173, 0, 0.8), 16, 0.2, 0, 0);
+}
+
