@@ -118,6 +118,8 @@ Controlador principal de la ruleta que maneja:
 
 ## 🚪 Pantalla 1: Entrada al Túnel
 
+![Ventana 1](docs/ventana1.png)
+
 ### Componentes visuales
 
 La pantalla de login está compuesta por:
@@ -197,6 +199,8 @@ Tras validación exitosa, el método `abrirRuleta()`:
 ---
 
 ## 🎡 Pantalla 2: Ruleta TRUCO/TRATO
+
+![Ventana 2](docs/ventana2.png)
 
 ### Arquitectura visual
 
